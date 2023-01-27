@@ -21,7 +21,6 @@ jobs:
         git config --local user.name "Sam5440"
         git add .
         git commit --allow-empty -m "daily sync"
-        git branch -m master main
-        git config --global user.token ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
-        git remote add origin https://${{ github.actor }}@github.com/${{ github.repository }}
-        git push -u origin main -f
+        git branch -m master download
+        git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        git push -u origin download -f
