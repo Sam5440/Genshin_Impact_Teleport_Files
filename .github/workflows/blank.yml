@@ -22,5 +22,6 @@ jobs:
         git add .
         git commit --allow-empty -m "daily sync"
         git branch -m master main
-        git remote add origin https://${{ github.actor }}:${{ secrets.WORKFLOW_GITHUB_TOKEN }}@github.com/${{ github.repository }}
+        git config --global user.token ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+        git remote add origin https://github.com/${{ github.repository }}
         git push -u origin main -f
