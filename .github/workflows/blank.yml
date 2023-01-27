@@ -23,5 +23,5 @@ jobs:
         git commit --allow-empty -m "daily sync"
         git branch -m master main
         git config --global user.token ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
-        git remote add origin https://github.com/${{ github.repository }}
+        git remote add origin git@github.com:Sam5440/Genshin_Impact_Teleport_Files
         git push -u origin main -f
